@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxv5v3vk4vijb"]
+
+[ext_resource type="Texture2D" uid="uid://gcgu6504r54v" path="res://tank_boss/tankbody.png" id="1_6miyt"]
+[ext_resource type="Script" path="res://tank_boss/tank_boss.gd" id="1_twx74"]
+[ext_resource type="PackedScene" uid="uid://b4vif20msc4io" path="res://ghost_boss/boss_bullet.tscn" id="2_vb2mu"]
+[ext_resource type="Texture2D" uid="uid://0nh6vh34h5gm" path="res://tank_boss/tankturret (1).png" id="3_f7vnd"]
+[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://line (1).png" id="3_rr3gv"]
+[ext_resource type="PackedScene" uid="uid://fof6rvsps2vy" path="res://enemies/scenes/bomb.tscn" id="3_t7p5v"]
+[ext_resource type="PackedScene" uid="uid://cc05ata8r8w20" path="res://tank_boss/cannon.tscn" id="4_7upcv"]
+[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://arc (1).png" id="4_swgla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7j6f"]
+size = Vector2(189, 189.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckxb5"]
+bg_color = Color(0.82606, 0.82606, 0.82606, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvs47"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td8fn"]
+size = Vector2(199, 198)
+
+[node name="TankBoss" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_twx74")
+bullet_scene = ExtResource("2_vb2mu")
+bomb_scene = ExtResource("3_t7p5v")
+cannon_scene = ExtResource("4_7upcv")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="PositionTimer" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="BodySprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_6miyt")
+
+[node name="TurretSprite" type="Sprite2D" parent="."]
+position = Vector2(0.999996, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_f7vnd")
+centered = false
+offset = Vector2(-390, -1150)
+
+[node name="Marker2D" type="Marker2D" parent="TurretSprite"]
+position = Vector2(-9.99991, -1150)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1.25)
+shape = SubResource("RectangleShape2D_e7j6f")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -69.5
+offset_top = -163.0
+offset_right = 71.5
+offset_bottom = -139.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ckxb5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cvs47")
+show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_td8fn")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(-1.01697, -163)
+scale = Vector2(0.231116, 0.148148)
+texture = ExtResource("3_rr3gv")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(-65.5, -151)
+scale = Vector2(0.148438, 0.148438)
+texture = ExtResource("4_swgla")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(-1.00848, -139)
+scale = Vector2(0.234782, 0.148148)
+texture = ExtResource("3_rr3gv")
+
+[node name="4" type="Sprite2D" parent="."]
+position = Vector2(63.5, -151)
+rotation = -3.14159
+scale = Vector2(0.148438, 0.148438)
+texture = ExtResource("4_swgla")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="PositionTimer" to="." method="pick_target"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

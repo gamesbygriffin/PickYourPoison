@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8hdhgqx5k66c"]
+
+[ext_resource type="Script" path="res://huds/CardHUD.gd" id="1_3n5f3"]
+[ext_resource type="PackedScene" uid="uid://ex4ngki8vxem" path="res://enemy_card.tscn" id="2_3nsuu"]
+[ext_resource type="PackedScene" uid="uid://c8ly55l4ks7in" path="res://upgrade_card.tscn" id="3_k0on5"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="4_wy2ro"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="5_n0dnd"]
+
+[node name="CardHUD" type="CanvasLayer"]
+script = ExtResource("1_3n5f3")
+enemy_card_scene = ExtResource("2_3nsuu")
+upgrade_card_scene = ExtResource("3_k0on5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = -115.0
+offset_top = -41.0
+offset_right = 116.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.93845, 0.93845, 0.93845, 1)
+theme_override_fonts/font = ExtResource("4_wy2ro")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("5_n0dnd")
+theme_override_styles/hover = ExtResource("5_n0dnd")
+theme_override_styles/pressed = ExtResource("5_n0dnd")
+theme_override_styles/disabled = ExtResource("5_n0dnd")
+text = "EXIT"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

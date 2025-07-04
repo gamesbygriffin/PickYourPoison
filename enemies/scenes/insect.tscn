@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnk1bjcb2iqwp"]
+
+[ext_resource type="Script" path="res://enemies/scripts/insect.gd" id="1_o4w70"]
+[ext_resource type="Texture2D" uid="uid://mi81suwmbr4d" path="res://assets/enemy_assets/insect1.png" id="2_iex58"]
+[ext_resource type="Texture2D" uid="uid://c2d76o26dpkja" path="res://assets/enemy_assets/insect2.png" id="3_qtwgp"]
+[ext_resource type="Texture2D" uid="uid://263yv6xvejgj" path="res://assets/enemy_assets/insect3.png" id="4_8ibyc"]
+[ext_resource type="Texture2D" uid="uid://rmm0xvbd0x6w" path="res://assets/enemy_assets/insect4.png" id="5_2ej3w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p0be"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iex58")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qtwgp")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8ibyc")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2ej3w")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gvcn"]
+radius = 11.0
+height = 38.0
+
+[node name="Insect" type="Area2D"]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_o4w70")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_4p0be")
+animation = &"4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1gvcn")

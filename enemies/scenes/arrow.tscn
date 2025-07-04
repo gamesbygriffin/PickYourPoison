@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3e81a52vrmyo"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Arrow.gd" id="1_g6yjm"]
+[ext_resource type="Texture2D" uid="uid://cflebyar762l2" path="res://assets/enemy_assets/arrow1.png" id="2_ld384"]
+[ext_resource type="Texture2D" uid="uid://bkwypx2rqjcw8" path="res://assets/enemy_assets/arrow2.png" id="3_b08ya"]
+[ext_resource type="Texture2D" uid="uid://bfyl7ji07josw" path="res://assets/enemy_assets/arrow3.png" id="4_uj5ga"]
+[ext_resource type="Texture2D" uid="uid://caxns0ud3plt8" path="res://assets/enemy_assets/arrowground1.png" id="5_7lvak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q48ea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ld384")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b08ya")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uj5ga")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7lvak")
+}],
+"loop": true,
+"name": &"ground",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6s7l"]
+radius = 9.0
+height = 38.0
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_g6yjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_q48ea")
+animation = &"ground"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_y6s7l")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

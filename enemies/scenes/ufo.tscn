@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://0utm4oyx7dmp"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Ufo.gd" id="1_wlu1j"]
+[ext_resource type="Texture2D" uid="uid://dqvv7somtvqt4" path="res://assets/enemy_assets/ufo2.png" id="2_ueujl"]
+[ext_resource type="Texture2D" uid="uid://b1x7ssgc3nbwu" path="res://assets/enemy_assets/ufo1.png" id="3_la315"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7rjb"]
+radius = 26.0
+height = 118.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ubnmk"]
+radius = 38.0
+height = 122.0
+
+[node name="Ufo" type="Area2D"]
+script = ExtResource("1_wlu1j")
+
+[node name="UfoSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ueujl")
+
+[node name="BeamSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 63)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_la315")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_o7rjb")
+
+[node name="BeamDetector" type="CollisionShape2D" parent="."]
+position = Vector2(0, 92)
+shape = SubResource("CapsuleShape2D_ubnmk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

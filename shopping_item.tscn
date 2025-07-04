@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://djif1u3mi24mn"]
+
+[ext_resource type="Script" path="res://shopping_item.gd" id="1_p783v"]
+[ext_resource type="Texture2D" uid="uid://vv2tm0pcjxxi" path="res://assets/misc_assets/item1.png" id="1_qnjjc"]
+[ext_resource type="Texture2D" uid="uid://cvcb14ld4l65a" path="res://assets/misc_assets/item2.png" id="2_jwjqq"]
+[ext_resource type="Texture2D" uid="uid://crjj5lvodithv" path="res://assets/misc_assets/item3.png" id="3_jyxcm"]
+[ext_resource type="Texture2D" uid="uid://drud0vcp7c8h2" path="res://assets/misc_assets/item4.png" id="4_hx6ql"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7m47h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qnjjc")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jwjqq")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jyxcm")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hx6ql")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[node name="ShoppingItem" type="Area2D"]
+script = ExtResource("1_p783v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_7m47h")
+animation = &"2"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

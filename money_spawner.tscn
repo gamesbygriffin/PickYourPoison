@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj2qcu8g1ofl2"]
+
+[ext_resource type="Script" path="res://money_spawner.gd" id="1_tgxiu"]
+[ext_resource type="PackedScene" uid="uid://cxvltyuhli6t7" path="res://coin/coin.tscn" id="2_5ic5f"]
+
+[node name="MoneySpawner" type="Node"]
+script = ExtResource("1_tgxiu")
+coin_scene = ExtResource("2_5ic5f")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://co2ve7tsx12sd"]
+
+[ext_resource type="Script" path="res://enemies/scripts/anvil.gd" id="1_mkd2l"]
+[ext_resource type="Texture2D" uid="uid://6ln7sjerrtch" path="res://assets/enemy_assets/anvil.png" id="2_8l8gh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiuys"]
+size = Vector2(41, 33)
+
+[node name="Anvil" type="Area2D"]
+script = ExtResource("1_mkd2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8l8gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_jiuys")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

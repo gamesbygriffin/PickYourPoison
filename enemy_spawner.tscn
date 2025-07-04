@@ -1,0 +1,36 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwkt7px5eua78"]
+
+[ext_resource type="Script" path="res://EnemySpawner.gd" id="1_rdnwl"]
+[ext_resource type="PackedScene" uid="uid://dugf82jj4pndh" path="res://enemies/scenes/icicle.tscn" id="2_0gra3"]
+[ext_resource type="PackedScene" uid="uid://cn2t133mpewub" path="res://enemies/scenes/fish.tscn" id="2_kaoep"]
+[ext_resource type="PackedScene" uid="uid://d3e81a52vrmyo" path="res://enemies/scenes/arrow.tscn" id="3_v3awg"]
+[ext_resource type="PackedScene" uid="uid://dnk1bjcb2iqwp" path="res://enemies/scenes/insect.tscn" id="5_ai1dy"]
+[ext_resource type="PackedScene" uid="uid://co2ve7tsx12sd" path="res://enemies/scenes/anvil.tscn" id="6_2cuwe"]
+[ext_resource type="PackedScene" uid="uid://cimfify51qv4" path="res://enemies/scenes/shopping_cart.tscn" id="7_n83x5"]
+[ext_resource type="PackedScene" uid="uid://fof6rvsps2vy" path="res://enemies/scenes/bomb.tscn" id="8_u31su"]
+[ext_resource type="PackedScene" uid="uid://bfxrf1mw1hdiy" path="res://enemies/scenes/car.tscn" id="9_de5bw"]
+[ext_resource type="PackedScene" uid="uid://bovcdam3s87en" path="res://enemies/scenes/tank.tscn" id="10_8h10b"]
+[ext_resource type="PackedScene" uid="uid://dmf76q0vsv05n" path="res://enemies/scenes/drone.tscn" id="11_4706g"]
+[ext_resource type="PackedScene" uid="uid://0utm4oyx7dmp" path="res://enemies/scenes/ufo.tscn" id="12_n3pqt"]
+[ext_resource type="PackedScene" uid="uid://c3igktn5jsago" path="res://enemies/scenes/spike_trap.tscn" id="13_b3yp5"]
+[ext_resource type="PackedScene" uid="uid://bhmijjr8ydjp3" path="res://enemies/scenes/plane.tscn" id="14_bjox7"]
+[ext_resource type="PackedScene" uid="uid://waytv7o4oe54" path="res://enemies/scenes/spike_block.tscn" id="15_7vp7l"]
+[ext_resource type="PackedScene" uid="uid://6o8fivqbge53" path="res://enemies/scenes/ghost.tscn" id="16_uds6n"]
+
+[node name="EnemySpawner" type="Node"]
+script = ExtResource("1_rdnwl")
+fish_scene = ExtResource("2_kaoep")
+icicle_scene = ExtResource("2_0gra3")
+arrow_scene = ExtResource("3_v3awg")
+insect_scene = ExtResource("5_ai1dy")
+anvil_scene = ExtResource("6_2cuwe")
+cart_scene = ExtResource("7_n83x5")
+bomb_scene = ExtResource("8_u31su")
+car_scene = ExtResource("9_de5bw")
+tank_scene = ExtResource("10_8h10b")
+drone_scene = ExtResource("11_4706g")
+ufo_scene = ExtResource("12_n3pqt")
+spike_scene = ExtResource("13_b3yp5")
+plane_scene = ExtResource("14_bjox7")
+spikeblock_scene = ExtResource("15_7vp7l")
+ghost_scene = ExtResource("16_uds6n")

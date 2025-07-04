@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn5cpmsuekgsb"]
+
+[ext_resource type="Script" path="res://huds/shop_hud.gd" id="1_84ss8"]
+[ext_resource type="PackedScene" uid="uid://db0py0u85oeum" path="res://shop_item.tscn" id="2_jjmkh"]
+[ext_resource type="Texture2D" uid="uid://bta6e8vxyh8bt" path="res://assets/shop_assets/shopbg.png" id="3_4klsy"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="4_6ur3p"]
+[ext_resource type="Texture2D" uid="uid://dtox1b8ifnfs8" path="res://exitbutton.png" id="5_eg82s"]
+[ext_resource type="Texture2D" uid="uid://1iurtbre8ltr" path="res://coin/coinface1.png" id="6_l0ci5"]
+
+[node name="ShopHUD" type="CanvasLayer"]
+script = ExtResource("1_84ss8")
+shop_item_scene = ExtResource("2_jjmkh")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_4klsy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 190.0
+offset_top = 101.0
+offset_right = 627.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("4_6ur3p")
+theme_override_font_sizes/font_size = 72
+text = "Hat Shop"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1654.0
+offset_top = 113.0
+offset_right = 1734.0
+offset_bottom = 196.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitSprite" type="Sprite2D" parent="."]
+position = Vector2(1694, 154)
+scale = Vector2(0.149019, 0.149019)
+texture = ExtResource("5_eg82s")
+
+[node name="MoneySprite" type="Sprite2D" parent="."]
+position = Vector2(628, 147)
+scale = Vector2(0.151515, 0.151515)
+texture = ExtResource("6_l0ci5")
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 681.0
+offset_top = 110.0
+offset_right = 788.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("4_6ur3p")
+theme_override_font_sizes/font_size = 64
+text = "100"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

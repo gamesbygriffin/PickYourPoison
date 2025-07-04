@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4ga3a74i72jy"]
+
+[ext_resource type="Script" path="res://huds/hud.gd" id="1_g7wem"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="1_mgqtn"]
+[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://pyptitlebgshrunk.png" id="2_4xgd0"]
+[ext_resource type="StyleBox" uid="uid://d1ivi7js1pv7v" path="res://huds/hud_button.tres" id="3_rin86"]
+[ext_resource type="Script" path="res://StartButton.gd" id="5_6jykv"]
+[ext_resource type="PackedScene" uid="uid://cn5cpmsuekgsb" path="res://huds/shop_hud.tscn" id="6_pect6"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="7_iuatn"]
+[ext_resource type="PackedScene" uid="uid://cu5rg3rs2fvcy" path="res://huds/tutorial_hud.tscn" id="8_g1j1n"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_g7wem")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4xgd0")
+
+[node name="TitleLabel2" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -940.0
+offset_top = 989.0
+offset_right = -565.0
+offset_bottom = 1070.0
+grow_horizontal = 2
+scale = Vector2(1, 0.983285)
+theme_override_fonts/font = ExtResource("1_mgqtn")
+theme_override_font_sizes/font_size = 64
+text = "By Griffin"
+
+[node name="TitleLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -674.0
+offset_top = 76.0
+offset_right = 681.0
+offset_bottom = 256.0
+grow_horizontal = 2
+scale = Vector2(1, 0.983285)
+theme_override_fonts/font = ExtResource("1_mgqtn")
+theme_override_font_sizes/font_size = 144
+text = "Pick Your Poison"
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -228.0
+offset_right = 231.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mgqtn")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("3_rin86")
+theme_override_styles/hover = ExtResource("3_rin86")
+theme_override_styles/pressed = ExtResource("3_rin86")
+text = "START"
+script = ExtResource("5_6jykv")
+
+[node name="ShopButton" type="Button" parent="."]
+offset_left = 1682.0
+offset_top = 965.0
+offset_right = 1902.0
+offset_bottom = 1062.0
+theme_override_fonts/font = ExtResource("1_mgqtn")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("7_iuatn")
+theme_override_styles/hover = ExtResource("7_iuatn")
+theme_override_styles/pressed = ExtResource("7_iuatn")
+theme_override_styles/disabled = ExtResource("7_iuatn")
+text = "Shop"
+
+[node name="TutorialButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -55.0
+offset_right = 158.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mgqtn")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("3_rin86")
+theme_override_styles/hover = ExtResource("3_rin86")
+theme_override_styles/pressed = ExtResource("3_rin86")
+text = "TUTORIAL"
+script = ExtResource("5_6jykv")
+
+[node name="ShopHUD" parent="." instance=ExtResource("6_pect6")]
+layer = 2
+visible = false
+
+[node name="TutorialHUD" parent="." instance=ExtResource("8_g1j1n")]
+layer = 2
+visible = false
+
+[connection signal="start_game" from="." to="ShopHUD" method="_on_hud_start_game"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ShopButton" to="ShopHUD" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

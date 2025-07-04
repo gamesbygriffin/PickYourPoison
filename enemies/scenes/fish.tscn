@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn2t133mpewub"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Fish.gd" id="1_plhho"]
+[ext_resource type="Texture2D" uid="uid://bbqam2mdfo50c" path="res://assets/enemy_assets/fish1.png" id="2_6o1r4"]
+[ext_resource type="Texture2D" uid="uid://ch0122rw8uhop" path="res://assets/enemy_assets/fish2.png" id="3_p6ebb"]
+[ext_resource type="Texture2D" uid="uid://bts1bwd0olncn" path="res://assets/enemy_assets/fish3.png" id="4_sq6ey"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1l3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6o1r4")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p6ebb")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sq6ey")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atiy7"]
+radius = 12.0
+height = 38.0
+
+[node name="Fish" type="Area2D"]
+script = ExtResource("1_plhho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_d1l3n")
+animation = &"1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 0)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_atiy7")

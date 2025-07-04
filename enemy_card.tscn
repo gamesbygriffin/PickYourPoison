@@ -1,0 +1,331 @@
+[gd_scene load_steps=32 format=3 uid="uid://ex4ngki8vxem"]
+
+[ext_resource type="Script" path="res://enemy_card.gd" id="1_ewebt"]
+[ext_resource type="StyleBox" uid="uid://b7wfkgf0pukis" path="res://card_style.tres" id="1_xksmm"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_0rv4o"]
+[ext_resource type="Texture2D" uid="uid://drpns0brkdccc" path="res://assets/card_assets/sprite_assets/cardanvil.png" id="3_fwfc5"]
+[ext_resource type="Texture2D" uid="uid://c8k4707t43lwg" path="res://assets/card_assets/sprite_assets/cardarrow.png" id="4_mcp27"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="5_hyiuf"]
+[ext_resource type="Texture2D" uid="uid://bcr4p75rd5447" path="res://assets/card_assets/reward_assets/+2tri.png" id="5_udw66"]
+[ext_resource type="Texture2D" uid="uid://bbxy2otcv84j4" path="res://assets/card_assets/sprite_assets/cardbomb.png" id="5_yyy7o"]
+[ext_resource type="Texture2D" uid="uid://chddoxgcheart" path="res://assets/card_assets/sprite_assets/cardcar.png" id="6_677la"]
+[ext_resource type="Texture2D" uid="uid://c5hx0hffj8vt1" path="res://assets/card_assets/sprite_assets/cardcart.png" id="7_um3d1"]
+[ext_resource type="Texture2D" uid="uid://bk8dby0yj0xea" path="res://assets/card_assets/sprite_assets/carddrone.png" id="8_4whm8"]
+[ext_resource type="Texture2D" uid="uid://cho5840y1jqo5" path="res://assets/card_assets/sprite_assets/cardfire.png" id="9_sdqtg"]
+[ext_resource type="Texture2D" uid="uid://c5tgvlhrxyybt" path="res://assets/card_assets/sprite_assets/cardfsih.png" id="10_wthpq"]
+[ext_resource type="Texture2D" uid="uid://dyaoqknr5xpp3" path="res://assets/card_assets/sprite_assets/cardghost.png" id="11_xdjn5"]
+[ext_resource type="Texture2D" uid="uid://bwqjo6ue2n0ij" path="res://assets/card_assets/sprite_assets/cardicicle.png" id="12_7x2j0"]
+[ext_resource type="Texture2D" uid="uid://bbesknkrjgd3k" path="res://assets/card_assets/sprite_assets/cardinsect.png" id="13_12q2u"]
+[ext_resource type="Texture2D" uid="uid://b40yxi160nxu7" path="res://assets/card_assets/sprite_assets/cardplane.png" id="14_gbobp"]
+[ext_resource type="Texture2D" uid="uid://cqdfuyu3r4ei2" path="res://assets/card_assets/sprite_assets/cardspike.png" id="15_cqnin"]
+[ext_resource type="Texture2D" uid="uid://des0hx7q4yyyn" path="res://assets/card_assets/sprite_assets/cardspikeblock.png" id="16_qf1ry"]
+[ext_resource type="Texture2D" uid="uid://d01m73ov61khr" path="res://assets/card_assets/sprite_assets/cardtank.png" id="17_rfesv"]
+[ext_resource type="Texture2D" uid="uid://cmxle4b2tuq37" path="res://assets/card_assets/sprite_assets/cardufo.png" id="18_5vujm"]
+[ext_resource type="Texture2D" uid="uid://bbjrbsy2p5jhu" path="res://assets/card_assets/reward_assets/+10tri.png" id="20_01nnp"]
+[ext_resource type="Texture2D" uid="uid://ups5uhmc3poc" path="res://assets/card_assets/reward_assets/+2cir.png" id="20_wjuuu"]
+[ext_resource type="Texture2D" uid="uid://3d40d8vvme1n" path="res://assets/card_assets/reward_assets/+5cir.png" id="22_qudts"]
+[ext_resource type="Texture2D" uid="uid://cp6tx1oqtywa6" path="res://assets/card_assets/reward_assets/+5tri.png" id="23_h1po0"]
+[ext_resource type="Texture2D" uid="uid://buv3bddn048jj" path="res://assets/card_assets/reward_assets/+7tri.png" id="24_y1dwj"]
+[ext_resource type="Texture2D" uid="uid://bxjuuepl31uhp" path="res://assets/card_assets/reward_assets/x1.5tri.png" id="25_ofsns"]
+[ext_resource type="Texture2D" uid="uid://jfatoab13mfu" path="res://assets/card_assets/reward_assets/x2tri.png" id="26_3c21a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgn0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_01nnp")
+}],
+"loop": true,
+"name": &"+10tri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_wjuuu")
+}],
+"loop": true,
+"name": &"+2cir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_udw66")
+}],
+"loop": true,
+"name": &"+2tri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_qudts")
+}],
+"loop": true,
+"name": &"+5cir",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_h1po0")
+}],
+"loop": true,
+"name": &"+5tri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_y1dwj")
+}],
+"loop": true,
+"name": &"+7tri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_ofsns")
+}],
+"loop": true,
+"name": &"x1.5tri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_3c21a")
+}],
+"loop": true,
+"name": &"x2tri",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b60gx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fwfc5")
+}],
+"loop": true,
+"name": &"anvil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mcp27")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yyy7o")
+}],
+"loop": true,
+"name": &"bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_677la")
+}],
+"loop": true,
+"name": &"car",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_um3d1")
+}],
+"loop": true,
+"name": &"cart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4whm8")
+}],
+"loop": true,
+"name": &"drone",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sdqtg")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wthpq")
+}],
+"loop": true,
+"name": &"fish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xdjn5")
+}],
+"loop": true,
+"name": &"ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_7x2j0")
+}],
+"loop": true,
+"name": &"icicle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_12q2u")
+}],
+"loop": true,
+"name": &"insect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gbobp")
+}],
+"loop": true,
+"name": &"plane",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_cqnin")
+}],
+"loop": true,
+"name": &"spike",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qf1ry")
+}],
+"loop": true,
+"name": &"spikeblock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rfesv")
+}],
+"loop": true,
+"name": &"tank",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_5vujm")
+}],
+"loop": true,
+"name": &"ufo",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7g2u"]
+size = Vector2(450, 730.688)
+
+[node name="EnemyCard" type="PanelContainer"]
+offset_left = -233.0
+offset_top = -264.0
+offset_right = 219.0
+offset_bottom = 346.0
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_xksmm")
+script = ExtResource("1_ewebt")
+
+[node name="Reward" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Reward"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.0
+offset_top = 668.0
+offset_right = 231.0
+offset_bottom = 749.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_0rv4o")
+theme_override_font_sizes/font_size = 64
+text = "+5"
+horizontal_alignment = 1
+
+[node name="RewardSprite" type="AnimatedSprite2D" parent="Reward"]
+position = Vector2(226, 680)
+scale = Vector2(0.146199, 0.146199)
+sprite_frames = SubResource("SpriteFrames_fgn0h")
+animation = &"+10tri"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 28.0
+offset_right = 434.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_0rv4o")
+theme_override_font_sizes/font_size = 48
+text = "Raining Arrows"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(227, 202)
+rotation = -0.0110057
+scale = Vector2(0.189284, 0.185465)
+sprite_frames = SubResource("SpriteFrames_b60gx")
+animation = &"arrow"
+
+[node name="Description" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 325.0
+offset_right = 434.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_0rv4o")
+theme_override_font_sizes/font_size = 38
+text = "Watch your feet or you might not have them."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="UnlockButton" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 38.0
+offset_top = 497.0
+offset_right = 416.0
+offset_bottom = 581.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.898039, 0.898039, 0.898039, 1)
+theme_override_fonts/font = ExtResource("3_0rv4o")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("5_hyiuf")
+theme_override_styles/hover = ExtResource("5_hyiuf")
+theme_override_styles/pressed = ExtResource("5_hyiuf")
+theme_override_styles/disabled = ExtResource("5_hyiuf")
+text = "UNLOCK"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(226, 363.656)
+shape = SubResource("RectangleShape2D_w7g2u")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="Control/UnlockButton" to="." method="_on_unlock_button_pressed"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwxyttb0vijhu"]
+
+[ext_resource type="Script" path="res://tank_boss/cannon_ball.gd" id="1_ivyh3"]
+[ext_resource type="Texture2D" uid="uid://cmyxfds8cffo8" path="res://tank_boss/cannonball.png" id="1_otxus"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7yytf"]
+radius = 19.4165
+
+[node name="CannonBall" type="Area2D"]
+script = ExtResource("1_ivyh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_otxus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7yytf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

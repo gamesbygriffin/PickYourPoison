@@ -1,0 +1,225 @@
+[gd_scene load_steps=25 format=3 uid="uid://db0py0u85oeum"]
+
+[ext_resource type="Texture2D" uid="uid://c5kkkglpg1qk8" path="res://assets/shop_assets/shopitem.png" id="1_05cah"]
+[ext_resource type="Script" path="res://shop_item.gd" id="1_rivae"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_dhmh1"]
+[ext_resource type="Texture2D" uid="uid://noicpupaduhd" path="res://assets/shop_assets/buttonbeanie.png" id="3_t8iq3"]
+[ext_resource type="Texture2D" uid="uid://ccidskjs6ny36" path="res://assets/shop_assets/buttoncowboy.png" id="5_mb16i"]
+[ext_resource type="Texture2D" uid="uid://chy3nxqpccmtj" path="res://assets/shop_assets/buttoncrown.png" id="6_jx2ji"]
+[ext_resource type="Texture2D" uid="uid://dy6ppf35gcjua" path="res://assets/shop_assets/buttonequip.png" id="7_8qhbv"]
+[ext_resource type="Texture2D" uid="uid://bxohise7kwn0v" path="res://assets/shop_assets/buttonparty.png" id="8_sjfvj"]
+[ext_resource type="Texture2D" uid="uid://d1jduxqh6kb1c" path="res://assets/shop_assets/buttontop.png" id="9_2vc5h"]
+[ext_resource type="Texture2D" uid="uid://2cjwyb5fr7od" path="res://assets/hat_assets/beanie.png" id="10_sbpce"]
+[ext_resource type="Texture2D" uid="uid://baaaq4wqwlpiv" path="res://assets/hat_assets/chefhat.png" id="11_p0beh"]
+[ext_resource type="Texture2D" uid="uid://cijrcytajc1ga" path="res://assets/hat_assets/cowboy.png" id="12_lex7j"]
+[ext_resource type="Texture2D" uid="uid://crs00jkh8i4m0" path="res://assets/hat_assets/crown.png" id="13_fyk85"]
+[ext_resource type="Texture2D" uid="uid://bxpicrm86mc2" path="res://assets/hat_assets/nothing.png" id="14_6m13w"]
+[ext_resource type="Texture2D" uid="uid://masr38g2jvu2" path="res://assets/hat_assets/partyhat.png" id="15_bm1ao"]
+[ext_resource type="Texture2D" uid="uid://d1fvkj6l3jxqi" path="res://assets/hat_assets/propeller.png" id="15_bpoop"]
+[ext_resource type="Texture2D" uid="uid://dxbt5oayoktfw" path="res://assets/hat_assets/tophat.png" id="16_ufrlt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1jmh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfqny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t8iq3")
+}],
+"loop": true,
+"name": &"beanie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mb16i")
+}],
+"loop": true,
+"name": &"chef",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mb16i")
+}],
+"loop": true,
+"name": &"cowboy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jx2ji")
+}],
+"loop": true,
+"name": &"crown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8qhbv")
+}],
+"loop": true,
+"name": &"equip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sjfvj")
+}],
+"loop": true,
+"name": &"party",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t8iq3")
+}],
+"loop": true,
+"name": &"propeller",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_2vc5h")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkttr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c451"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb8i0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qk0e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hlole"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sbpce")
+}],
+"loop": true,
+"name": &"beanie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_p0beh")
+}],
+"loop": true,
+"name": &"chef",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_lex7j")
+}],
+"loop": true,
+"name": &"cowboy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_fyk85")
+}],
+"loop": true,
+"name": &"crown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6m13w")
+}],
+"loop": true,
+"name": &"nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_bm1ao")
+}],
+"loop": true,
+"name": &"party",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_bpoop")
+}],
+"loop": true,
+"name": &"propeller",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ufrlt")
+}],
+"loop": true,
+"name": &"top",
+"speed": 5.0
+}]
+
+[node name="ShopItem" type="PanelContainer"]
+offset_left = -146.0
+offset_top = -172.0
+offset_right = 146.0
+offset_bottom = 170.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_y1jmh")
+script = ExtResource("1_rivae")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(146, 171)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("1_05cah")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="ButtonSprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(148.382, 300.1)
+scale = Vector2(0.0763158, 0.0763158)
+sprite_frames = SubResource("SpriteFrames_yfqny")
+animation = &"propeller"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 18.0
+offset_top = 274.0
+offset_right = 279.0
+offset_bottom = 327.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jkttr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1c451")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xb8i0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2qk0e")
+text = "
+"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(146.75, 164.534)
+scale = Vector2(0.248235, 0.248235)
+sprite_frames = SubResource("SpriteFrames_hlole")
+animation = &"propeller"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 283.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_dhmh1")
+theme_override_font_sizes/font_size = 36
+text = "Beanie"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

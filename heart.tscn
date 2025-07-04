@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://q6hxw4mlf832"]
+
+[ext_resource type="Texture2D" uid="uid://dlwfi3viqewlu" path="res://assets/misc_assets/heart (6).png" id="1_ycux6"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="2_7j7kb"]
+
+[node name="Heart" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ycux6")
+script = ExtResource("2_7j7kb")

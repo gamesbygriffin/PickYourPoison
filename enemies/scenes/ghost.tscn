@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6o8fivqbge53"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Ghost.gd" id="1_b43g3"]
+[ext_resource type="Texture2D" uid="uid://c6rx46wgoml62" path="res://assets/enemy_assets/ghost.png" id="2_0fivo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqd2k"]
+radius = 33.0
+height = 72.0
+
+[node name="Ghost" type="Area2D"]
+script = ExtResource("1_b43g3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0fivo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_oqd2k")

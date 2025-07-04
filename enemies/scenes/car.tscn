@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfxrf1mw1hdiy"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Car.gd" id="1_aubaq"]
+[ext_resource type="Texture2D" uid="uid://tjx8bjxrn7s2" path="res://assets/enemy_assets/car1.png" id="2_ck0ky"]
+[ext_resource type="Texture2D" uid="uid://cl1jl2jp15uhr" path="res://assets/enemy_assets/car2.png" id="3_ekdke"]
+[ext_resource type="Texture2D" uid="uid://b1iypey03mq" path="res://assets/enemy_assets/car3.png" id="4_54c1u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2mii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ck0ky")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ekdke")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_54c1u")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltl2u"]
+radius = 24.0
+height = 152.0
+
+[node name="Car" type="Area2D"]
+script = ExtResource("1_aubaq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_i2mii")
+animation = &"3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ltl2u")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=15 format=3 uid="uid://citkm1i55dd2m"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_60w75"]
+[ext_resource type="PackedScene" uid="uid://3ptwf1hgmv30" path="res://player/player.tscn" id="1_xa521"]
+[ext_resource type="Texture2D" uid="uid://d1dcthwhrxumv" path="res://1bg (1).png" id="2_6gwn6"]
+[ext_resource type="PackedScene" uid="uid://b8hdhgqx5k66c" path="res://hud_scenes/card_hud.tscn" id="3_f76uj"]
+[ext_resource type="PackedScene" uid="uid://dndgeg4bcr2a4" path="res://ground.tscn" id="3_j2ywa"]
+[ext_resource type="PackedScene" uid="uid://ikccbm4o4724" path="res://level_manager.tscn" id="3_yqdi2"]
+[ext_resource type="PackedScene" uid="uid://ih8mqnrucv3v" path="res://hp_manager.tscn" id="4_mibjo"]
+[ext_resource type="PackedScene" uid="uid://ex4ngki8vxem" path="res://enemy_card.tscn" id="4_v2ckm"]
+[ext_resource type="PackedScene" uid="uid://bj2qcu8g1ofl2" path="res://money_spawner.tscn" id="6_tc5bn"]
+[ext_resource type="PackedScene" uid="uid://dwkt7px5eua78" path="res://enemy_spawner.tscn" id="7_sdlu1"]
+[ext_resource type="PackedScene" uid="uid://bpxd1rjiry1y7" path="res://boss/ghost_boss.tscn" id="8_eeike"]
+[ext_resource type="PackedScene" uid="uid://d4ga3a74i72jy" path="res://hud_scenes/hud.tscn" id="11_wg6xb"]
+[ext_resource type="PackedScene" uid="uid://dpdu0tjq5iarl" path="res://hud_scenes/game_hud.tscn" id="12_7q7eo"]
+[ext_resource type="PackedScene" uid="uid://slk5rp5gqc8s" path="res://end_screen.tscn" id="14_8iqa2"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_60w75")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6gwn6")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("7_sdlu1")]
+
+[node name="LevelManager" parent="." instance=ExtResource("3_yqdi2")]
+
+[node name="MoneySpawner" parent="." instance=ExtResource("6_tc5bn")]
+
+[node name="Ground" parent="." instance=ExtResource("3_j2ywa")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_xa521")]
+position = Vector2(963, 547)
+
+[node name="EnemyCard" parent="." instance=ExtResource("4_v2ckm")]
+offset_left = -561.0
+offset_top = -747.0
+offset_right = -109.0
+offset_bottom = -104.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-687, 758)
+
+[node name="GhostBoss" parent="." instance=ExtResource("8_eeike")]
+position = Vector2(963, 540)
+
+[node name="GameHUD" parent="." instance=ExtResource("12_7q7eo")]
+
+[node name="HpManager" parent="GameHUD" instance=ExtResource("4_mibjo")]
+
+[node name="CardHUD" parent="." instance=ExtResource("3_f76uj")]
+
+[node name="HUD" parent="." instance=ExtResource("11_wg6xb")]
+
+[node name="EndScreen" parent="." instance=ExtResource("14_8iqa2")]
+
+[connection signal="boss_start" from="LevelManager" to="EnemySpawner" method="_on_level_manager_boss_start"]
+[connection signal="boss_start" from="LevelManager" to="GhostBoss" method="_on_level_manager_boss_start"]
+[connection signal="boss_start" from="LevelManager" to="CardHUD" method="_on_level_manager_boss_start"]
+[connection signal="player_dead" from="GameHUD/HpManager" to="EnemySpawner" method="_on_hp_manager_player_dead"]
+[connection signal="player_dead" from="GameHUD/HpManager" to="MoneySpawner" method="_on_hp_manager_player_dead"]
+[connection signal="player_dead" from="GameHUD/HpManager" to="CardHUD" method="_on_hp_manager_player_dead"]
+[connection signal="player_dead" from="GameHUD/HpManager" to="HUD" method="_on_hp_manager_player_dead"]
+[connection signal="player_dead" from="GameHUD/HpManager" to="EndScreen" method="_on_hp_manager_player_dead"]
+[connection signal="start_game" from="HUD" to="EnemySpawner" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="MoneySpawner" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="Player" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="GameHUD/HpManager" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="CardHUD" method="_on_hud_start_game"]
+[connection signal="start_game" from="HUD" to="EndScreen" method="_on_hud_start_game"]

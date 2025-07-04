@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://cu5rg3rs2fvcy"]
+
+[ext_resource type="Script" path="res://huds/TutorialHUD.gd" id="1_f7oiw"]
+[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://pyptitlebgshrunk.png" id="2_bt6ss"]
+[ext_resource type="Texture2D" uid="uid://caa66de4ybf0b" path="res://assets/misc_assets/tutorial1.png" id="3_cl5ft"]
+[ext_resource type="Texture2D" uid="uid://brfb1m68e3w77" path="res://assets/misc_assets/tutorial2.png" id="4_gxyav"]
+[ext_resource type="Texture2D" uid="uid://blap7sqky0adj" path="res://assets/misc_assets/tutorial3.png" id="5_m2wwa"]
+[ext_resource type="Texture2D" uid="uid://xcgk6t2kvur6" path="res://assets/misc_assets/tutorial4.png" id="6_1tuad"]
+[ext_resource type="Texture2D" uid="uid://cplvyoqrpqqp7" path="res://assets/misc_assets/tutorial5.png" id="7_x8p2r"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="8_07s6g"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="9_s87vh"]
+
+[node name="TutorialHUD" type="CanvasLayer"]
+script = ExtResource("1_f7oiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_bt6ss")
+
+[node name="Sprite1" type="Sprite2D" parent="."]
+position = Vector2(340, 444)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_cl5ft")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(958, 439)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_gxyav")
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+position = Vector2(1575, 433)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_m2wwa")
+
+[node name="Sprite4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(487, 433)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_1tuad")
+
+[node name="Sprite5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1415, 432)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_x8p2r")
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 1499.0
+offset_top = 849.0
+offset_right = 1846.0
+offset_bottom = 985.0
+theme_override_fonts/font = ExtResource("8_07s6g")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = ExtResource("9_s87vh")
+theme_override_styles/hover = ExtResource("9_s87vh")
+theme_override_styles/pressed = ExtResource("9_s87vh")
+theme_override_styles/disabled = ExtResource("9_s87vh")
+theme_override_styles/focus = ExtResource("9_s87vh")
+text = "NEXT"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 69.0
+offset_top = 856.0
+offset_right = 416.0
+offset_bottom = 992.0
+theme_override_fonts/font = ExtResource("8_07s6g")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = ExtResource("9_s87vh")
+theme_override_styles/hover = ExtResource("9_s87vh")
+theme_override_styles/pressed = ExtResource("9_s87vh")
+theme_override_styles/disabled = ExtResource("9_s87vh")
+theme_override_styles/focus = ExtResource("9_s87vh")
+text = "BACK"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

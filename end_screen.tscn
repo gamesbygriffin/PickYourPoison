@@ -1,0 +1,166 @@
+[gd_scene load_steps=12 format=3 uid="uid://slk5rp5gqc8s"]
+
+[ext_resource type="Script" path="res://end_screen.gd" id="1_judq1"]
+[ext_resource type="Texture2D" uid="uid://bk47wkkouqcr1" path="res://assets/letters_assets/lettera.png" id="2_xqx0b"]
+[ext_resource type="Texture2D" uid="uid://6cvy0jgrg8dg" path="res://ghost_boss/endbg.png" id="2_ykkka"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_8fa1g"]
+[ext_resource type="Texture2D" uid="uid://b28k72n7l15ka" path="res://assets/letters_assets/lettera+.png" id="4_fxqht"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="4_nhr1m"]
+[ext_resource type="Texture2D" uid="uid://bf5m3ta76tfe7" path="res://assets/letters_assets/letterb.png" id="5_u204d"]
+[ext_resource type="Texture2D" uid="uid://bqc4dbog14lw7" path="res://assets/letters_assets/letterc.png" id="6_cl0pm"]
+[ext_resource type="Texture2D" uid="uid://bnd4toeeq2s1q" path="res://assets/letters_assets/letterd.png" id="7_o4jcp"]
+[ext_resource type="Texture2D" uid="uid://btyl3nn6tds5r" path="res://assets/letters_assets/letterf.png" id="8_2ruo8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14o4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xqx0b")
+}],
+"loop": true,
+"name": &"a",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fxqht")
+}],
+"loop": true,
+"name": &"a+",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u204d")
+}],
+"loop": true,
+"name": &"b",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_cl0pm")
+}],
+"loop": true,
+"name": &"c",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_o4jcp")
+}],
+"loop": true,
+"name": &"d",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2ruo8")
+}],
+"loop": true,
+"name": &"f",
+"speed": 5.0
+}]
+
+[node name="EndScreen" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_judq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ykkka")
+
+[node name="LetterSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(553.375, 518.197)
+scale = Vector2(0.49006, 0.49006)
+sprite_frames = SubResource("SpriteFrames_14o4x")
+animation = &"f"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 809.0
+offset_top = 904.0
+offset_right = 1124.0
+offset_bottom = 973.0
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_nhr1m")
+theme_override_styles/hover = ExtResource("4_nhr1m")
+theme_override_styles/pressed = ExtResource("4_nhr1m")
+theme_override_styles/disabled = ExtResource("4_nhr1m")
+text = "CONTINUE"
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 174.0
+offset_right = 1357.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 108
+text = "F in the Chat"
+
+[node name="DifficultyLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 310.0
+offset_right = 1628.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "dificulty place_holder"
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 407.0
+offset_right = 1419.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "hp place_holder"
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 506.0
+offset_right = 1628.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "money place_holder"
+
+[node name="BossLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 712.0
+offset_right = 1628.0
+offset_bottom = 793.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "boss place_holder"
+
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 608.0
+offset_right = 1628.0
+offset_bottom = 689.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "level place_holder"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 809.0
+offset_top = 805.0
+offset_right = 1531.0
+offset_bottom = 886.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_8fa1g")
+theme_override_font_sizes/font_size = 64
+text = "12030123"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(809, 904)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,155 @@
+[gd_scene load_steps=15 format=3 uid="uid://c8ly55l4ks7in"]
+
+[ext_resource type="StyleBox" uid="uid://b7wfkgf0pukis" path="res://card_style.tres" id="1_efmip"]
+[ext_resource type="Script" path="res://upgrade_card.gd" id="2_smwu2"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_qh63w"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="4_gh53t"]
+[ext_resource type="Texture2D" uid="uid://bag24csryrtp1" path="res://assets/card_assets/upgrade_assets/dash1.png" id="5_hdch5"]
+[ext_resource type="Texture2D" uid="uid://dmcprmcrny8xb" path="res://assets/card_assets/upgrade_assets/health1.png" id="6_khexj"]
+[ext_resource type="Texture2D" uid="uid://dml46lcdjnmr2" path="res://assets/card_assets/upgrade_assets/health2.png" id="7_gvmvo"]
+[ext_resource type="Texture2D" uid="uid://ct57em15jc5nh" path="res://assets/card_assets/upgrade_assets/money1.png" id="8_p2pa1"]
+[ext_resource type="Texture2D" uid="uid://btthpk1t2cye1" path="res://assets/card_assets/upgrade_assets/money2.png" id="9_m76gg"]
+[ext_resource type="Texture2D" uid="uid://orvk7t0sikpk" path="res://assets/card_assets/upgrade_assets/money3.png" id="10_jydkf"]
+[ext_resource type="Texture2D" uid="uid://b8mtpaiwj7fuw" path="res://assets/card_assets/upgrade_assets/speed1.png" id="11_v17fq"]
+[ext_resource type="Texture2D" uid="uid://bni1wxk7acvi4" path="res://assets/card_assets/upgrade_assets/speed2.png" id="12_h071j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_226y6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hdch5")
+}],
+"loop": true,
+"name": &"dash1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_khexj")
+}],
+"loop": true,
+"name": &"health1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gvmvo")
+}],
+"loop": true,
+"name": &"health2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p2pa1")
+}],
+"loop": true,
+"name": &"money1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_m76gg")
+}],
+"loop": true,
+"name": &"money2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jydkf")
+}],
+"loop": true,
+"name": &"money3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_v17fq")
+}],
+"loop": true,
+"name": &"speed1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_h071j")
+}],
+"loop": true,
+"name": &"speed2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhorv"]
+size = Vector2(452, 609)
+
+[node name="UpgradeCard" type="PanelContainer"]
+offset_left = -226.0
+offset_top = -305.0
+offset_right = 224.0
+offset_bottom = 303.0
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_efmip")
+script = ExtResource("2_smwu2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 28.0
+offset_right = 434.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_qh63w")
+theme_override_font_sizes/font_size = 48
+text = "Health Boost ll"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 325.0
+offset_right = 434.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/font = ExtResource("3_qh63w")
+theme_override_font_sizes/font_size = 38
+text = "Almost as fast as a car in a school zone."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BuyButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 497.0
+offset_right = 416.0
+offset_bottom = 581.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.898039, 0.898039, 0.898039, 1)
+theme_override_fonts/font = ExtResource("3_qh63w")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("4_gh53t")
+theme_override_styles/hover = ExtResource("4_gh53t")
+theme_override_styles/pressed = ExtResource("4_gh53t")
+theme_override_styles/disabled = ExtResource("4_gh53t")
+text = "BUY 10"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(229, 200)
+scale = Vector2(0.189, 0.189)
+sprite_frames = SubResource("SpriteFrames_226y6")
+animation = &"dash1"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(226, 305)
+shape = SubResource("RectangleShape2D_hhorv")
+
+[connection signal="pressed" from="Control/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

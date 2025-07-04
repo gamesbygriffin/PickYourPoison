@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bovcdam3s87en"]
+
+[ext_resource type="Script" path="res://enemies/scripts/Tank.gd" id="1_1y8tu"]
+[ext_resource type="PackedScene" uid="uid://woyia66y4vfb" path="res://enemies/scenes/tank_bullet.tscn" id="2_mllwn"]
+[ext_resource type="Texture2D" uid="uid://cne0oxys5icrg" path="res://assets/enemy_assets/tank.png" id="3_755c0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pdps"]
+size = Vector2(98, 73)
+
+[node name="Tank" type="Area2D"]
+script = ExtResource("1_1y8tu")
+bullet_scene = ExtResource("2_mllwn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_755c0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -2)
+shape = SubResource("RectangleShape2D_8pdps")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-59, -15)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

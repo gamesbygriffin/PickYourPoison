@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3igktn5jsago"]
+
+[ext_resource type="Script" path="res://enemies/scripts/SpikeTrap.gd" id="1_xd0v2"]
+[ext_resource type="Texture2D" uid="uid://dra5man3kci6h" path="res://assets/enemy_assets/spike2.png" id="2_edlcl"]
+[ext_resource type="Texture2D" uid="uid://ka8vhiav56ky" path="res://assets/enemy_assets/spike1.png" id="3_50xqt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dns5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_edlcl")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_50xqt")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soqd4"]
+size = Vector2(68, 49)
+
+[node name="SpikeTrap" type="Area2D"]
+script = ExtResource("1_xd0v2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_8dns5")
+animation = &"2"
+
+[node name="PlayerDetector" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_soqd4")
+
+[node name="SpikeTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SpikeTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_free_timeout"]

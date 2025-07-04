@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ih8mqnrucv3v"]
+
+[ext_resource type="Script" path="res://managers/HpManager.gd" id="1_t755w"]
+[ext_resource type="PackedScene" uid="uid://q6hxw4mlf832" path="res://heart.tscn" id="2_1sd17"]
+
+[node name="HpManager" type="Node"]
+script = ExtResource("1_t755w")
+heart_scene = ExtResource("2_1sd17")

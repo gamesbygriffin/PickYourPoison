@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4vif20msc4io"]
+
+[ext_resource type="Script" path="res://ghost_boss/boss_bullet.gd" id="1_p7nns"]
+[ext_resource type="Texture2D" uid="uid://djar6qsiqdlvr" path="res://ghost_boss/bone1.png" id="2_eju4b"]
+[ext_resource type="Texture2D" uid="uid://bcvd6hphx1w03" path="res://ghost_boss/bone2.png" id="3_f56g0"]
+[ext_resource type="Texture2D" uid="uid://cqd850pahrcem" path="res://ghost_boss/skull.png" id="4_5glh7"]
+[ext_resource type="Texture2D" uid="uid://cx85htp0cr8kw" path="res://tank_boss/tank_bullet1.png" id="5_w488n"]
+[ext_resource type="Texture2D" uid="uid://ytu3bq6wivlu" path="res://tank_boss/tank_bullet2.png" id="6_agdop"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pb43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eju4b")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f56g0")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5glh7")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w488n")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_agdop")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h4bar"]
+radius = 20.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_puv3c"]
+height = 48.0
+
+[node name="BossBullet" type="Area2D"]
+script = ExtResource("1_p7nns")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_5pb43")
+animation = &"4"
+
+[node name="GhostCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_h4bar")
+disabled = true
+
+[node name="TankCollisionShape" type="CollisionShape2D" parent="."]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_puv3c")
+disabled = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-7, -7)
+scale = Vector2(0.3, 0.3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

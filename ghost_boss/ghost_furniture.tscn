@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5cnd4vyshipc"]
+
+[ext_resource type="Script" path="res://ghost_boss/GhostFurniture.gd" id="1_wvb5w"]
+[ext_resource type="Texture2D" uid="uid://by2q48ugrp755" path="res://assets/furniture_assets/furniture1.png" id="2_rjbg3"]
+[ext_resource type="Texture2D" uid="uid://uyu3wu78hg76" path="res://assets/furniture_assets/furniture2.png" id="3_edlds"]
+[ext_resource type="Texture2D" uid="uid://cx3kj3fk1f8qf" path="res://assets/furniture_assets/furniture3.png" id="4_5rogj"]
+[ext_resource type="Texture2D" uid="uid://r5krchl0dj2n" path="res://assets/furniture_assets/furniture4.png" id="5_bqitb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_piiab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rjbg3")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_edlds")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5rogj")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bqitb")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2x6i"]
+size = Vector2(77, 82)
+
+[node name="GhostFurniture" type="Area2D"]
+script = ExtResource("1_wvb5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_piiab")
+animation = &"4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_y2x6i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

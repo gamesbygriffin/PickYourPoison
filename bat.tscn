@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqurdcbj8l2h1"]
+
+[ext_resource type="Script" path="res://Bat.gd" id="1_0se4u"]
+[ext_resource type="Texture2D" uid="uid://0vchi2b66h4g" path="res://assets/misc_assets/bat.png" id="2_jg35c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m4o4"]
+height = 76.0
+
+[sub_resource type="Animation" id="Animation_5qrfr"]
+resource_name = "swing"
+length = 0.5
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.74533, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.2, 0.26),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufnua"]
+_data = {
+"swing": SubResource("Animation_5qrfr")
+}
+
+[node name="Bat" type="Area2D"]
+position = Vector2(0, -17)
+script = ExtResource("1_0se4u")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(53, 17)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0.450005, -23.25)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_jg35c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.450008, -30.25)
+shape = SubResource("CapsuleShape2D_8m4o4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ufnua")
+}
