@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://huds/shop_hud.gd" id="1_84ss8"]
 [ext_resource type="PackedScene" uid="uid://db0py0u85oeum" path="res://shop_item.tscn" id="2_jjmkh"]
 [ext_resource type="Texture2D" uid="uid://bta6e8vxyh8bt" path="res://assets/shop_assets/shopbg.png" id="3_4klsy"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="4_6ur3p"]
-[ext_resource type="Texture2D" uid="uid://dtox1b8ifnfs8" path="res://exitbutton.png" id="5_eg82s"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="4_7odnv"]
+[ext_resource type="Texture2D" uid="uid://dtox1b8ifnfs8" path="res://assets/exitbutton.png" id="5_eg82s"]
 [ext_resource type="Texture2D" uid="uid://1iurtbre8ltr" path="res://coin/coinface1.png" id="6_l0ci5"]
 
 [node name="ShopHUD" type="CanvasLayer"]
@@ -22,7 +22,7 @@ offset_top = 101.0
 offset_right = 627.0
 offset_bottom = 207.0
 theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
-theme_override_fonts/font = ExtResource("4_6ur3p")
+theme_override_fonts/font = ExtResource("4_7odnv")
 theme_override_font_sizes/font_size = 72
 text = "Hat Shop"
 metadata/_edit_use_anchors_ = true
@@ -50,7 +50,7 @@ offset_top = 110.0
 offset_right = 788.0
 offset_bottom = 191.0
 theme_override_colors/font_color = Color(0.164706, 0.164706, 0.164706, 1)
-theme_override_fonts/font = ExtResource("4_6ur3p")
+theme_override_fonts/font = ExtResource("4_7odnv")
 theme_override_font_sizes/font_size = 64
 text = "100"
 

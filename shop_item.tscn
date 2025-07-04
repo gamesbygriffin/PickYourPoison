@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5kkkglpg1qk8" path="res://assets/shop_assets/shopitem.png" id="1_05cah"]
 [ext_resource type="Script" path="res://shop_item.gd" id="1_rivae"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_dhmh1"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="3_dhmh1"]
 [ext_resource type="Texture2D" uid="uid://noicpupaduhd" path="res://assets/shop_assets/buttonbeanie.png" id="3_t8iq3"]
 [ext_resource type="Texture2D" uid="uid://ccidskjs6ny36" path="res://assets/shop_assets/buttoncowboy.png" id="5_mb16i"]
 [ext_resource type="Texture2D" uid="uid://chy3nxqpccmtj" path="res://assets/shop_assets/buttoncrown.png" id="6_jx2ji"]

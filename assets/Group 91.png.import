@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba3ms41vcysj0"
-path="res://.godot/imported/arc (1).png-5a9ce0bb697dd9fb85427de94c5d7d61.ctex"
+uid="uid://ler236fo3avh"
+path="res://.godot/imported/Group 91.png-d461d8c8e04e69c86d1045d8eb035e68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arc (1).png"
-dest_files=["res://.godot/imported/arc (1).png-5a9ce0bb697dd9fb85427de94c5d7d61.ctex"]
+source_file="res://assets/Group 91.png"
+dest_files=["res://.godot/imported/Group 91.png-d461d8c8e04e69c86d1045d8eb035e68.ctex"]
 
 [params]
 

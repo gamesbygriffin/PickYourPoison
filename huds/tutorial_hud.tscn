@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://cu5rg3rs2fvcy"]
 
 [ext_resource type="Script" path="res://huds/TutorialHUD.gd" id="1_f7oiw"]
-[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://pyptitlebgshrunk.png" id="2_bt6ss"]
+[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://assets/pyptitlebgshrunk.png" id="2_bt6ss"]
 [ext_resource type="Texture2D" uid="uid://caa66de4ybf0b" path="res://assets/misc_assets/tutorial1.png" id="3_cl5ft"]
 [ext_resource type="Texture2D" uid="uid://brfb1m68e3w77" path="res://assets/misc_assets/tutorial2.png" id="4_gxyav"]
 [ext_resource type="Texture2D" uid="uid://blap7sqky0adj" path="res://assets/misc_assets/tutorial3.png" id="5_m2wwa"]
 [ext_resource type="Texture2D" uid="uid://xcgk6t2kvur6" path="res://assets/misc_assets/tutorial4.png" id="6_1tuad"]
 [ext_resource type="Texture2D" uid="uid://cplvyoqrpqqp7" path="res://assets/misc_assets/tutorial5.png" id="7_x8p2r"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="8_07s6g"]
-[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="9_s87vh"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="8_07s6g"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://styles/unlock_button_style.tres" id="9_s87vh"]
 
 [node name="TutorialHUD" type="CanvasLayer"]
 script = ExtResource("1_f7oiw")

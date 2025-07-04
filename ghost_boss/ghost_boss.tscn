@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://qt5cyoynvqh4" path="res://ghost_boss/ghostboss.png" id="1_hg7yi"]
 [ext_resource type="PackedScene" uid="uid://b4vif20msc4io" path="res://ghost_boss/boss_bullet.tscn" id="2_pa34f"]
 [ext_resource type="PackedScene" uid="uid://c5cnd4vyshipc" path="res://ghost_boss/ghost_furniture.tscn" id="3_r8c6h"]
-[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://line (1).png" id="5_42n8q"]
-[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://arc (1).png" id="6_0ygok"]
+[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://assets/line (1).png" id="5_42n8q"]
+[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://assets/arc (1).png" id="6_0ygok"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57aqk"]
 radius = 69.0

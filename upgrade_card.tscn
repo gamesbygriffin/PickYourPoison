@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://c8ly55l4ks7in"]
 
-[ext_resource type="StyleBox" uid="uid://b7wfkgf0pukis" path="res://card_style.tres" id="1_efmip"]
+[ext_resource type="StyleBox" uid="uid://b7wfkgf0pukis" path="res://styles/card_style.tres" id="1_efmip"]
 [ext_resource type="Script" path="res://upgrade_card.gd" id="2_smwu2"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="3_qh63w"]
-[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="4_gh53t"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="3_qh63w"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://styles/unlock_button_style.tres" id="4_gh53t"]
 [ext_resource type="Texture2D" uid="uid://bag24csryrtp1" path="res://assets/card_assets/upgrade_assets/dash1.png" id="5_hdch5"]
 [ext_resource type="Texture2D" uid="uid://dmcprmcrny8xb" path="res://assets/card_assets/upgrade_assets/health1.png" id="6_khexj"]
 [ext_resource type="Texture2D" uid="uid://dml46lcdjnmr2" path="res://assets/card_assets/upgrade_assets/health2.png" id="7_gvmvo"]

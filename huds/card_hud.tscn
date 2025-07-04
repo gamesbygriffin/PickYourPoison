@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://huds/CardHUD.gd" id="1_3n5f3"]
 [ext_resource type="PackedScene" uid="uid://ex4ngki8vxem" path="res://enemy_card.tscn" id="2_3nsuu"]
 [ext_resource type="PackedScene" uid="uid://c8ly55l4ks7in" path="res://upgrade_card.tscn" id="3_k0on5"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="4_wy2ro"]
-[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="5_n0dnd"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="4_wy2ro"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://styles/unlock_button_style.tres" id="5_n0dnd"]
 
 [node name="CardHUD" type="CanvasLayer"]
 script = ExtResource("1_3n5f3")

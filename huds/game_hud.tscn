@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpdu0tjq5iarl"]
 
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="1_gies2"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="1_gies2"]
 [ext_resource type="Script" path="res://huds/game_hud.gd" id="1_gvawa"]
 [ext_resource type="Texture2D" uid="uid://x54evcejln1h" path="res://coin/coinface2.png" id="2_besiu"]
 [ext_resource type="Texture2D" uid="uid://1iurtbre8ltr" path="res://coin/coinface1.png" id="3_4rrxt"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://d4ga3a74i72jy"]
 
 [ext_resource type="Script" path="res://huds/hud.gd" id="1_g7wem"]
-[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://Sniglet-ExtraBold.ttf" id="1_mgqtn"]
-[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://pyptitlebgshrunk.png" id="2_4xgd0"]
+[ext_resource type="FontFile" uid="uid://c4p3kvuewqhp8" path="res://styles/Sniglet-ExtraBold.ttf" id="1_mgqtn"]
+[ext_resource type="Texture2D" uid="uid://dr0xpey314ie" path="res://assets/pyptitlebgshrunk.png" id="2_4xgd0"]
 [ext_resource type="StyleBox" uid="uid://d1ivi7js1pv7v" path="res://huds/hud_button.tres" id="3_rin86"]
 [ext_resource type="Script" path="res://StartButton.gd" id="5_6jykv"]
 [ext_resource type="PackedScene" uid="uid://cn5cpmsuekgsb" path="res://huds/shop_hud.tscn" id="6_pect6"]
-[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://unlock_button_style.tres" id="7_iuatn"]
+[ext_resource type="StyleBox" uid="uid://mmhgq18liao5" path="res://styles/unlock_button_style.tres" id="7_iuatn"]
 [ext_resource type="PackedScene" uid="uid://cu5rg3rs2fvcy" path="res://huds/tutorial_hud.tscn" id="8_g1j1n"]
 
 [node name="HUD" type="CanvasLayer"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlv63xpecvwx2"
-path="res://.godot/imported/pyptitlebg.png-83e5ef778007a0e30c4193a8c096934f.ctex"
+uid="uid://dr0xpey314ie"
+path="res://.godot/imported/pyptitlebgshrunk.png-5127689d840106c56e17f93769c774e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pyptitlebg.png"
-dest_files=["res://.godot/imported/pyptitlebg.png-83e5ef778007a0e30c4193a8c096934f.ctex"]
+source_file="res://assets/pyptitlebgshrunk.png"
+dest_files=["res://.godot/imported/pyptitlebgshrunk.png-5127689d840106c56e17f93769c774e7.ctex"]
 
 [params]
 

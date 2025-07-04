@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c4p3kvuewqhp8"
-path="res://.godot/imported/Sniglet-ExtraBold.ttf-c3e180821f4f94f313c1c09fe6d10086.fontdata"
+path="res://.godot/imported/Sniglet-ExtraBold.ttf-9788adb4da610d6fd0b34e6af398683c.fontdata"
 
 [deps]
 
-source_file="res://Sniglet-ExtraBold.ttf"
-dest_files=["res://.godot/imported/Sniglet-ExtraBold.ttf-c3e180821f4f94f313c1c09fe6d10086.fontdata"]
+source_file="res://styles/Sniglet-ExtraBold.ttf"
+dest_files=["res://.godot/imported/Sniglet-ExtraBold.ttf-9788adb4da610d6fd0b34e6af398683c.fontdata"]
 
 [params]
 

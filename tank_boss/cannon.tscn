@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://tank_boss/cannon.gd" id="1_n826x"]
 [ext_resource type="Texture2D" uid="uid://x5bgeo86fw28" path="res://tank_boss/cannon.png" id="1_qmw5o"]
 [ext_resource type="PackedScene" uid="uid://bwxyttb0vijhu" path="res://tank_boss/cannon_ball.tscn" id="2_e1sp7"]
-[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://line (1).png" id="3_kb082"]
-[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://arc (1).png" id="4_i8r1k"]
+[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://assets/line (1).png" id="3_kb082"]
+[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://assets/arc (1).png" id="4_i8r1k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ngsh"]
 radius = 82.0975

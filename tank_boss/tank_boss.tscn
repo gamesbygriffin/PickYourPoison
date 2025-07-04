@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://tank_boss/tank_boss.gd" id="1_twx74"]
 [ext_resource type="PackedScene" uid="uid://b4vif20msc4io" path="res://ghost_boss/boss_bullet.tscn" id="2_vb2mu"]
 [ext_resource type="Texture2D" uid="uid://0nh6vh34h5gm" path="res://tank_boss/tankturret (1).png" id="3_f7vnd"]
-[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://line (1).png" id="3_rr3gv"]
+[ext_resource type="Texture2D" uid="uid://c0ud3b07vkvvm" path="res://assets/line (1).png" id="3_rr3gv"]
 [ext_resource type="PackedScene" uid="uid://fof6rvsps2vy" path="res://enemies/scenes/bomb.tscn" id="3_t7p5v"]
 [ext_resource type="PackedScene" uid="uid://cc05ata8r8w20" path="res://tank_boss/cannon.tscn" id="4_7upcv"]
-[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://arc (1).png" id="4_swgla"]
+[ext_resource type="Texture2D" uid="uid://ba3ms41vcysj0" path="res://assets/arc (1).png" id="4_swgla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7j6f"]
 size = Vector2(189, 189.5)
